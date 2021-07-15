@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-commerce",
+  "name": "e-cig",
   "version": "1.0.0",
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
