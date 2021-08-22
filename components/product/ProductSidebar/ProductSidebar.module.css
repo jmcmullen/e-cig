@@ -20,7 +20,7 @@
 }
 
 .header .name span {
-  @apply py-4 px-6 bg-primary text-primary font-bold;
+  @apply py-4 bg-primary text-primary font-bold;
   font-size: inherit;
   letter-spacing: inherit;
   box-decoration-break: clone;
@@ -28,12 +28,12 @@
 }
 
 .header .price {
-  @apply pt-2 px-6 pb-4 text-sm bg-primary text-accent-9
+  @apply pt-2 pb-4 text-sm bg-primary text-accent-9
   font-semibold inline-block tracking-wide;
 }
 
 .sidebar {
-  @apply flex flex-col col-span-1 mx-auto max-w-8xl px-6 py-6 w-full h-full;
+  @apply flex flex-col col-span-1 mx-auto max-w-8xl py-6 w-full h-full;
 }
 
 .sliderContainer {

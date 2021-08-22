@@ -1,6 +1,6 @@
 export const getConfig = () => {
   return `
-    new ReviewsWidget('#ReviewsWidget', {
+    typeof window !== 'undefined' && window.ReviewsWidget && new window.ReviewsWidget('#ReviewsWidget', {
     //Your REVIEWS.io account ID and widget type:
     store: 'e-cig.delivery',
     widget: 'polaris',

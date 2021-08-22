@@ -31,7 +31,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 
   return (
     <>
-      <Container className="max-w-none w-full" clean>
+      <Container>
         <div className={cn(s.root, 'fit')}>
           <div className={cn(s.main, 'fit')}>
             <div className={s.sliderContainer}>
@@ -63,16 +63,13 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
           <ProductSidebar product={product} className={s.sidebar} />
         </div>
 
-        <hr className="mt-7 border-accent-2" />
-
-        <div className="px-6 py-12">
+        <div className="py-12">
           <Text variant="sectionHeading">Reviews</Text>
           <div id="ReviewsWidget"></div>
         </div>
 
-        <hr className="mt-7 border-accent-2" />
-        <section className="py-12 px-6 mb-10">
-          <Text variant="sectionHeading">Related Products</Text>
+        <section className="py-12 mb-10">
+          <Text variant="sectionHeading">Other Flavours</Text>
           <div className={s.relatedProductsGrid}>
             {relatedProducts.map((p) => (
               <div

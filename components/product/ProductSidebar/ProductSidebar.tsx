@@ -100,10 +100,16 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             />
           </Collapse>
         </div>
-        <Collapse title="Delivery">
-          Each order is sent via Australia Post using Express Delivery. A
-          tracking number is provided to your email as soon as the order has
-          been posted. Estimated delivery time is 1-3 business days.
+        <Collapse title="Age Verification">
+          You must be 18 or over to purchase from this website! All orders are
+          verified upon checkout through agechecker.net. You will need to upload
+          valid photo identification before your order is shipped.
+        </Collapse>
+        <Collapse title="Shipping Details">
+          We ship to anywhere in Australia. Each order is sent via Australia
+          Post using Express Delivery. A tracking number is provided to your
+          email as soon as the order has been posted. Estimated delivery time is
+          1-4 days.
         </Collapse>
         <Collapse title="Return Policy">
           We do not accept returns. For any faulty products we have a 100% money
