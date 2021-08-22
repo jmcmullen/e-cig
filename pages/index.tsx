@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
 import { ProductCard } from '@components/product'
@@ -50,9 +51,11 @@ export default function Home({
             product for you.
           </p>
 
-          <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl">
-            Get started
-          </button>
+          <Link href="/flavours">
+            <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl">
+              Get started
+            </button>
+          </Link>
         </div>
 
         <div className="right">

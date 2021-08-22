@@ -9,9 +9,12 @@
   & .productImage {
     transform: scale(1.05);
   }
+  & .price {
+    transform: scale(1.05);
+  }
 }
 .header {
-  @apply transition-colors ease-in-out duration-500;
+  @apply transition-colors ease-in-out duration-500 flex flex-col items-center;
 }
 
 .header .name {
@@ -30,6 +33,10 @@
   -webkit-box-decoration-break: clone;
 }
 
+.header .price small {
+  @apply block text-center w-full;
+}
+
 .header .price {
   @apply py-4 px-12 text-sm bg-secondary text-accent-1 font-semibold rounded-none mx-auto block
   transition-colors ease-in-out duration-500;
@@ -45,7 +52,7 @@
 
 .imageContainer .productImage {
   @apply transform transition-transform duration-500
-  /* object-cover scale-120; */
+  /* object-cover scale-120; */;
 }
 
 .root .wishlistButton {
@@ -58,7 +65,7 @@
 }
 
 .simple .header .price {
-  @apply text-sm text-center
+  @apply text-sm text-center mt-4 transform transition-transform duration-500;
 }
 
 /* Variant Slim */
