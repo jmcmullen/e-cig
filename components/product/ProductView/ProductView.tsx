@@ -64,6 +64,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
         </div>
 
         <hr className="mt-7 border-accent-2" />
+
         <div className="px-6 py-12">
           <Text variant="sectionHeading">Reviews</Text>
           <div id="ReviewsWidget"></div>
