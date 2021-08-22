@@ -41,7 +41,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <section className="flex flex-col-reverse lg:flex-row bg-secondary p-6 lg:pb-20">
+      <section className="flex flex-col-reverse lg:flex-row bg-secondary p-6 lg:pb-10">
         <div className="text-white lg:flex flex-col lg:w-2/4 lg:justify-center lg:ml-10 lg:px-20 lg:py-20">
           <h2 className="text-3xl font-bold uppercase mt-5 mb-3 lg:text-7xl">
             What's your favourite flavour?
@@ -51,13 +51,13 @@ export default function Home({
             product for you.
           </p>
           <Link href="/flavours">
-            <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl">
+            <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl lg:w-60">
               Shop now
             </button>
           </Link>
         </div>
-        <div className="right lg:w-3/5 lg:ml-16">
-          <img src="http://lorempixel.com/768/684" alt="" />
+        <div className="right lg:w-2/5 lg:ml-16">
+          <img src="./assets/images/multipleIget.jpg" alt="" />
         </div>
       </section>
       <section>
@@ -69,8 +69,8 @@ export default function Home({
         <div className="mt-10 mx-9 text-2xl font-bold flex items-center justify-center text-center lg:text-3xl">
           <h2>Another way to join the Club.</h2>
         </div>
-        <div className="mx-5 my-10 lg:flex lg:justify-center">
-          <img src="http://lorempixel.com/768/684" alt="" />
+        <div className="mx-5 my-10 lg:flex lg:justify-center w-2/6 items-center">
+          <img src="./assets/images/grape.jpg" alt="" />
         </div>
         <section />
         <div className="text-xl mb-10 font-bold flex items-center justify-center text-center lg:text-3xl lg:mt-20">
@@ -78,7 +78,7 @@ export default function Home({
         </div>
         <section className="lg:flex flex-row-reverse lg:justify-center lg:my-10">
           <div className="mx-5 my-10 lg:flex lg:w-2/5">
-            <img src="http://lorempixel.com/768/684" alt="" />
+            <img src="./assets/images/mango.jpg" alt="" />
           </div>
           <div className="lg:flex lg:flex-col lg:justify-center lg:px-20 lg:w-2/5">
             <div className="border mx-6 mb-5 lg:flex lg:mr-24" />
@@ -95,7 +95,7 @@ export default function Home({
         </section>
         <section className="lg:flex lg:justify-center lg:my-10 lg:ml-20">
           <div className="mx-6 my-10 lg:w-2/5">
-            <img src="http://lorempixel.com/768/684" alt="" />
+            <img src="./assets/images/bluerazz.jpg" alt="" />
           </div>
           <div className="lg:flex lg:flex-col lg:justify-center lg:px-20 lg:w-2/5">
             <div className="border mx-6 mb-5 lg:mr-28" />
