@@ -71,6 +71,46 @@ export default function Home({
         <div className="mx-5 my-10">
           <img src="http://lorempixel.com/768/684" alt="" />
         </div>
+        <div className="text-xl mb-10 font-bold flex items-center justify-center text-center">
+          <h3>Why join the Club.</h3>
+        </div>
+        <div className="mx-5 my-10">
+          <img src="http://lorempixel.com/768/684" alt="" />
+        </div>
+        <div className="border mx-6 mb-5" />
+        <div className="text-3xl mx-6 mb-3 font-bold">
+          <h2>You get top-shelf products.</h2>
+        </div>
+        <div className="mx-6 left font-medium">
+          <ol className="list-disc list-inside">
+            <li>Made with premium ingredients</li>
+            <li>Made with premium ingredients</li>
+          </ol>
+        </div>
+        <div className="mx-6 my-10">
+          <img src="http://lorempixel.com/768/684" alt="" />
+        </div>
+        <div className="border mx-6 mb-5" />
+        <div className="text-3xl mx-6 mb-3 font-bold">
+          <h2>You're always in control.</h2>
+        </div>
+        <div className="mx-6 left font-medium mb-10">
+          <ol className="list-disc list-inside">
+            <li>Made with premium ingredients</li>
+            <li>Made with premium ingredients</li>
+            <li>Made with premium ingredients</li>
+            <li>Made with premium ingredients</li>
+            <li>Made with premium ingredients</li>
+          </ol>
+        </div>
+        <div className="text-2xl mb-1 font-medium flex items-center justify-center text-center">
+          <h3>Tell us how you get ready.</h3>
+        </div>
+        <div className="p-6">
+          <button className="bg-secondary text-white py-5 px-12 rounded-none font-bold text-xl w-full">
+            Get started
+          </button>
+        </div>
       </section>
     </>
   )
