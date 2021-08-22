@@ -50,14 +50,12 @@ export default function Home({
             Tell us about your taste preferences and we'll find the perfect
             product for you.
           </p>
-
           <Link href="/flavours">
             <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl">
               Shop now
             </button>
           </Link>
         </div>
-
         <div className="right lg:w-3/5 lg:ml-16">
           <img src="http://lorempixel.com/768/684" alt="" />
         </div>
@@ -95,7 +93,7 @@ export default function Home({
             </div>
           </div>
         </section>
-        <section className="lg:flex lg:justify-center lg:my-10">
+        <section className="lg:flex lg:justify-center lg:my-10 lg:ml-20">
           <div className="mx-6 my-10 lg:w-2/5">
             <img src="http://lorempixel.com/768/684" alt="" />
           </div>
@@ -120,9 +118,11 @@ export default function Home({
             <h3>Tell us how you get ready.</h3>
           </div>
           <div className="p-6 lg:flex lg:justify-center">
-            <button className="bg-secondary text-white py-5 px-12 rounded-none font-bold text-xl w-full lg:w-56">
-              Shop now
-            </button>
+            <Link href="/flavours">
+              <button className="bg-secondary text-white py-5 px-12 rounded-none font-bold text-xl w-full lg:w-56">
+                Shop now
+              </button>
+            </Link>
           </div>
         </section>
       </section>
