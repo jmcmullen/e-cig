@@ -1,26 +1,21 @@
 {
-  "title": "ACME Storefront | Powered by Next.js Commerce",
-  "titleTemplate": "%s - ACME Storefront",
-  "description": "Next.js Commerce - https://www.nextjs.org/commerce",
+  "title": "iGet Disposable Vapes",
+  "titleTemplate": "%s - E-Cigarette Delivery",
+  "description": "Get the best prices on iGet disposable vapes with the best customer service in Australia, with over 17 flavours to choose from we are bound to have one to suite your taste buds.",
   "openGraph": {
-    "title": "ACME Storefront | Powered by Next.js Commerce",
-    "description": "Next.js Commerce - https://www.nextjs.org/commerce",
+    "title": "iGet Disposable Vapes - E-Cigarette Delivery",
+    "description": "Get the best prices on iGet disposable vapes with the best customer service in Australia, with over 17 flavours to choose from we are bound to have one to suite your taste buds.",
     "type": "website",
-    "locale": "en_IE",
-    "url": "https://nextjs.org/commerce",
-    "site_name": "Next.js Commerce",
+    "locale": "en_AU",
+    "url": "https://e-cig.delivery",
+    "site_name": "E-CIG DELIVERY",
     "images": [
       {
         "url": "/card.png",
         "width": 800,
         "height": 600,
-        "alt": "Next.js Commerce"
+        "alt": "E-CIG DELIVERY"
       }
     ]
-  },
-  "twitter": {
-    "handle": "@nextjs",
-    "site": "@nextjs",
-    "cardType": "summary_large_image"
   }
 }
