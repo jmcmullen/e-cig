@@ -1,5 +1,5 @@
 .root {
-  @apply sticky top-0 bg-primary z-40 transition-all duration-150;
+  @apply sticky top-0 bg-secondary z-40 transition-all duration-150;
   min-height: 74px;
 }
 
@@ -14,15 +14,15 @@
 .link {
   @apply inline-flex items-center leading-6
   transition ease-in-out duration-75 cursor-pointer
-  text-accent-5;
+  text-accent-0;
 }
 
 .link:hover {
-  @apply text-accent-9;
+  @apply text-accent-3;
 }
 
 .link:focus {
-  @apply outline-none text-accent-8;
+  @apply outline-none text-accent-2;
 }
 
 .logo {
