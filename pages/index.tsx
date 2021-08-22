@@ -118,9 +118,11 @@ export default function Home({
             <h3>Tell us how you get ready.</h3>
           </div>
           <div className="p-6 lg:flex lg:justify-center">
-            <button className="bg-secondary text-white py-5 px-12 rounded-none font-bold text-xl w-full lg:w-56">
-              Shop now
-            </button>
+            <Link href="/flavours">
+              <button className="bg-secondary text-white py-5 px-12 rounded-none font-bold text-xl w-full lg:w-56">
+                Shop now
+              </button>
+            </Link>
           </div>
         </section>
       </section>
