@@ -42,14 +42,33 @@ export default function Home({
     <>
       <section className="flex flex-col-reverse bg-secondary p-6">
         <div className="text-white">
-        <h2 className="text-3xl font-bold uppercase mt-5 mb-3">What's your favourite flavour?</h2>
-        <p className="mb-5">Tell us about your taste preferences and we'll find the perfect product for you.</p>
+          <h2 className="text-3xl font-bold uppercase mt-5 mb-3">
+            What's your favourite flavour?
+          </h2>
+          <p className="mb-5">
+            Tell us about your taste preferences and we'll find the perfect
+            product for you.
+          </p>
 
-        <button className="bg-red py-5 px-12 rounded-none">Get Started</button>
-
+          <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl">
+            Get started
+          </button>
         </div>
 
         <div className="right">
+          <img src="http://lorempixel.com/768/684" alt="" />
+        </div>
+      </section>
+      <section>
+        <div className="bg-accent-2 h-14 flex items-center justify-center font-bold text-sm">
+          <p>FREE SHIPPING AUSTRALIA WIDE OVER $50.</p>
+        </div>
+      </section>
+      <section>
+        <div className="mt-10 mx-9 text-2xl font-bold flex items-center justify-center text-center">
+          <h2>Another way to join the Club.</h2>
+        </div>
+        <div className="mx-5 my-10">
           <img src="http://lorempixel.com/768/684" alt="" />
         </div>
       </section>
