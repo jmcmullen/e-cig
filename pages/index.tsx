@@ -41,7 +41,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <section className="flex flex-col-reverse lg:flex-row bg-secondary p-6">
+      <section className="flex flex-col-reverse lg:flex-row bg-secondary p-6 lg:pb-20">
         <div className="text-white lg:flex flex-col lg:w-2/4 lg:justify-center lg:ml-10 lg:px-20 lg:py-20">
           <h2 className="text-3xl font-bold uppercase mt-5 mb-3 lg:text-7xl">
             What's your favourite flavour?

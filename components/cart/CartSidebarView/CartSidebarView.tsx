@@ -9,8 +9,10 @@ import { Bag, Cross, Check } from '@components/icons'
 import useCart from '@framework/cart/use-cart'
 import usePrice from '@framework/product/use-price'
 import SidebarLayout from '@components/common/SidebarLayout'
+import { useRouter } from 'next/router'
 
 const CartSidebarView: FC = () => {
+  const router = useRouter()
   const { closeSidebar, setSidebarView } = useUI()
   const { data, isLoading, isEmpty } = useCart()
 
@@ -28,6 +30,10 @@ const CartSidebarView: FC = () => {
   )
   const handleClose = () => closeSidebar()
   const goToCheckout = () => setSidebarView('CHECKOUT_VIEW')
+  const goToFlavours = () => {
+    router.push('/flavours')
+    closeSidebar()
+  }
 
   const error = null
   const success = null
@@ -86,6 +92,17 @@ const CartSidebarView: FC = () => {
                   currencyCode={data!.currency.code}
                 />
               ))}
+              <li>
+                <Button
+                  href="/flavours"
+                  Component="b"
+                  width="100%"
+                  variant="ghost"
+                  onClick={goToFlavours}
+                >
+                  Buy More Flavours
+                </Button>
+              </li>
             </ul>
           </div>
 
