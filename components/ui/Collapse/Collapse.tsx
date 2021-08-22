@@ -8,7 +8,7 @@ import useMeasure from 'react-use-measure'
 export interface CollapseProps {
   title: string
   children: ReactNode
-  defaultOpen?: Boolean
+  defaultOpen?: boolean
 }
 
 const Collapse: FC<CollapseProps> = React.memo(
