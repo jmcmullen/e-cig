@@ -88,7 +88,7 @@ const ProductCard: FC<Props> = ({
                   <span>{product.name}</span>
                 </h3>
                 <small>{product.sku || 'IGET XXL'}</small>
-                <button className={s.price}>Buy ${product.price.value}</button>
+                {/* <button className={s.price}>Buy ${product.price.value}</button> */}
               </div>
             )}
           </>

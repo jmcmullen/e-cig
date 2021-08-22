@@ -79,8 +79,8 @@ const CartItem = ({
       })}
       {...rest}
     >
-      <div className="flex flex-row space-x-4 py-4">
-        <div className="w-16 h-16 bg-violet relative overflow-hidden cursor-pointer z-0">
+      <div className="flex flex-row space-x-4 py-4 w-full">
+        <div className="w-20 h-20 relative overflow-hidden cursor-pointer z-0">
           <Link href={`/product/${item.path}`}>
             <Image
               onClick={() => closeSidebarIfPresent()}
@@ -93,57 +93,65 @@ const CartItem = ({
             />
           </Link>
         </div>
-        <div className="flex-1 flex flex-col text-base">
-          <Link href={`/product/${item.path}`}>
-            <span
-              className={s.productName}
-              onClick={() => closeSidebarIfPresent()}
-            >
-              {item.name}
-            </span>
-          </Link>
-          {options && options.length > 0 && (
-            <div className="flex items-center pb-1">
-              {options.map((option: ItemOption, i: number) => (
-                <div
-                  key={`${item.id}-${option.name}`}
-                  className="text-sm font-semibold text-accent-7 inline-flex items-center justify-center"
+        <div className="flex flex-col w-full">
+          <div className="flex">
+            <div className="flex-1 flex flex-col text-base">
+              <Link href={`/product/${item.path}`}>
+                <span
+                  className={s.productName}
+                  onClick={() => closeSidebarIfPresent()}
                 >
-                  {option.name}
-                  {option.name === 'Color' ? (
-                    <span
-                      className="mx-2 rounded-full bg-transparent border w-5 h-5 p-1 text-accent-9 inline-flex items-center justify-center overflow-hidden"
-                      style={{
-                        backgroundColor: `${option.value}`,
-                      }}
-                    ></span>
-                  ) : (
-                    <span className="mx-2 rounded-full bg-transparent border h-5 p-1 text-accent-9 inline-flex items-center justify-center overflow-hidden">
-                      {option.value}
-                    </span>
-                  )}
-                  {i === options.length - 1 ? '' : <span className="mr-3" />}
+                  {item.name}
+                </span>
+              </Link>
+              {options && options.length > 0 && (
+                <div className="flex items-center pb-1">
+                  {options.map((option: ItemOption, i: number) => (
+                    <div
+                      key={`${item.id}-${option.name}`}
+                      className="text-sm font-semibold text-accent-7 inline-flex items-center justify-center"
+                    >
+                      {option.name}
+                      {option.name === 'Color' ? (
+                        <span
+                          className="mx-2 rounded-full bg-transparent border w-5 h-5 p-1 text-accent-9 inline-flex items-center justify-center overflow-hidden"
+                          style={{
+                            backgroundColor: `${option.value}`,
+                          }}
+                        ></span>
+                      ) : (
+                        <span className="mx-2 rounded-full bg-transparent border h-5 p-1 text-accent-9 inline-flex items-center justify-center overflow-hidden">
+                          {option.value}
+                        </span>
+                      )}
+                      {i === options.length - 1 ? (
+                        ''
+                      ) : (
+                        <span className="mr-3" />
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              )}
+              {variant === 'display' && (
+                <div className="text-sm tracking-wider">{quantity}x</div>
+              )}
             </div>
+            <div className="flex flex-col justify-between space-y-2 text-sm">
+              <span>{price}</span>
+            </div>
+          </div>
+          {variant === 'default' && (
+            <Quantity
+              value={quantity}
+              handleRemove={handleRemove}
+              handleChange={handleChange}
+              increase={() => increaseQuantity(1)}
+              decrease={() => increaseQuantity(-1)}
+            />
           )}
-          {variant === 'display' && (
-            <div className="text-sm tracking-wider">{quantity}x</div>
-          )}
-        </div>
-        <div className="flex flex-col justify-between space-y-2 text-sm">
-          <span>{price}</span>
         </div>
       </div>
-      {variant === 'default' && (
-        <Quantity
-          value={quantity}
-          handleRemove={handleRemove}
-          handleChange={handleChange}
-          increase={() => increaseQuantity(1)}
-          decrease={() => increaseQuantity(-1)}
-        />
-      )}
     </li>
   )
 }

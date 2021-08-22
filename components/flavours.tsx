@@ -66,14 +66,8 @@ export default function Search({ categories, brands }: SearchPropsType) {
   return (
     <Container>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-3 mb-20">
-
-        {/* Sort */}
-        <div className="col-span-8 lg:col-span-2 order-2 lg:order-none">
-
-        </div>
-
         {/* Products */}
-        <div className="col-span-8 order-3 lg:order-none">
+        <div className="col-span-12 order-3 lg:order-none">
           {(q || activeCategory || activeBrand) && (
             <div className="mb-12 transition ease-in duration-75">
               {data ? (
@@ -118,7 +112,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
             </div>
           )}
           {data ? (
-            <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
               {data.products.map((product: Product) => (
                 <ProductCard
                   variant="simple"
@@ -141,11 +135,6 @@ export default function Search({ categories, brands }: SearchPropsType) {
               ))}
             </div>
           )}{' '}
-        </div>
-
-        {/* Sort */}
-        <div className="col-span-8 lg:col-span-2 order-2 lg:order-none">
-
         </div>
       </div>
     </Container>

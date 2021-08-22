@@ -47,9 +47,9 @@ const CartSidebarView: FC = () => {
           <h2 className="pt-6 text-2xl font-bold tracking-wide text-center">
             Your cart is empty
           </h2>
-          <p className="text-accent-3 px-10 text-center pt-2">
+          {/* <p className="text-accent-3 px-10 text-center pt-2">
             Biscuit oat cake wafer icing ice cream tiramisu pudding cupcake.
-          </p>
+          </p> */}
         </div>
       ) : error ? (
         <div className="flex-1 px-4 flex flex-col justify-center items-center">
@@ -94,10 +94,6 @@ const CartSidebarView: FC = () => {
               <li className="flex justify-between py-1">
                 <span>Subtotal</span>
                 <span>{subTotal}</span>
-              </li>
-              <li className="flex justify-between py-1">
-                <span>Taxes</span>
-                <span>Calculated at checkout</span>
               </li>
               <li className="flex justify-between py-1">
                 <span>Shipping</span>
