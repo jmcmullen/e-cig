@@ -37,6 +37,9 @@ const ProductCard: FC<Props> = ({
     className
   )
 
+  console.log(product);
+
+
   return (
     <Link href={`/product/${product.slug}`} {...props}>
       <a className={rootClassName}>
@@ -60,7 +63,21 @@ const ProductCard: FC<Props> = ({
         )}
 
         {variant === 'simple' && (
-          <>
+        <>
+          <div className={s.imageContainer}>
+            {product?.images && (
+              <Image
+                alt={product.name || 'Product Image'}
+                className={s.productImage}
+                src={product.images[0]?.url || placeholderImg}
+                height={540}
+                width={540}
+                quality="85"
+                layout="responsive"
+                {...imgProps}
+              />
+            )}
+          </div>
             {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
@@ -72,26 +89,13 @@ const ProductCard: FC<Props> = ({
               <div className={s.header}>
                 <h3 className={s.name}>
                   <span>{product.name}</span>
+                  <small>{product.sku}</small>
                 </h3>
-                <div className={s.price}>
-                  {`${price} ${product.price?.currencyCode}`}
-                </div>
+                <button className={s.price}>
+                  Buy ${product.price.value}
+                </button>
               </div>
             )}
-            <div className={s.imageContainer}>
-              {product?.images && (
-                <Image
-                  alt={product.name || 'Product Image'}
-                  className={s.productImage}
-                  src={product.images[0]?.url || placeholderImg}
-                  height={540}
-                  width={540}
-                  quality="85"
-                  layout="responsive"
-                  {...imgProps}
-                />
-              )}
-            </div>
           </>
         )}
 
