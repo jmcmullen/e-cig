@@ -41,20 +41,22 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <section className="flex flex-col-reverse lg:flex-row bg-secondary p-6 lg:pb-20">
-        <div className="text-white lg:flex flex-col lg:w-2/4 lg:justify-center lg:ml-10 lg:px-20 lg:py-20">
-          <h2 className="text-3xl font-bold uppercase mt-5 mb-3 lg:text-7xl">
-            What's your favourite flavour?
-          </h2>
-          <p className="mb-5 lg:text-2xl">
-            Tell us about your taste preferences and we'll find the perfect
-            product for you.
-          </p>
-          <Link href="/flavours">
-            <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl">
-              Shop now
-            </button>
-          </Link>
+      <section className="flex flex-col-reverse lg:flex-row lg:justify-center bg-secondary p-6 lg:pb-20">
+        <div className="text-white lg:flex flex-col lg:w-2/4 lg:justify-center lg:items-center lg:py-20">
+          <div className="lg:max-w-sm lg:flex lg:flex-col">
+            <h2 className="text-3xl font-bold uppercase mt-5 mb-3 lg:text-7xl">
+              Delicious Vapes, Delivered.
+            </h2>
+            <p className="mb-5 lg:text-2xl">
+              We have your favourite flavours of disposable vapes. All our vapor
+              cigarettes are ready-to-use – no charging needed.
+            </p>
+            <Link href="/flavours">
+              <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl">
+                Browse Flavours
+              </button>
+            </Link>
+          </div>
         </div>
         <div className="right lg:w-3/5 lg:ml-16">
           <img src="http://lorempixel.com/768/684" alt="" />
@@ -62,69 +64,56 @@ export default function Home({
       </section>
       <section>
         <div className="bg-accent-2 h-14 flex items-center justify-center font-bold text-sm lg:text-lg">
-          <p>FREE SHIPPING AUSTRALIA WIDE OVER $50.</p>
+          <p>FREE EXPRESS SHIPPING FOR ORDERS OVER $50.</p>
         </div>
       </section>
-      <section>
-        <div className="mt-10 mx-9 text-2xl font-bold flex items-center justify-center text-center lg:text-3xl">
-          <h2>Another way to join the Club.</h2>
-        </div>
-        <div className="mx-5 my-10 lg:flex lg:justify-center">
+      <section className="lg:flex flex-row-reverse lg:justify-center lg:my-10">
+        <div className="mx-5 my-10 lg:flex lg:w-2/5">
           <img src="http://lorempixel.com/768/684" alt="" />
         </div>
-        <section />
-        <div className="text-xl mb-10 font-bold flex items-center justify-center text-center lg:text-3xl lg:mt-20">
-          <h3>Why join the Club.</h3>
+        <div className="lg:flex lg:flex-col lg:justify-center lg:px-20 lg:w-2/5">
+          <div className="border mx-6 mb-5 lg:flex lg:mr-24" />
+          <div className="text-3xl mx-6 mb-3 font-bold lg:flex lg:text-5xl ">
+            <h2>No charging, no filling, no installation</h2>
+          </div>
+          <div className="mx-6 left font-medium lg:text-1xl">
+            <ol className="list-disc list-inside lg:mt-3">
+              <li>Ready to use as soon as it arrives</li>
+              <li>Already filled up with your juice of choice</li>
+              <li>Activates as soon as you draw</li>
+            </ol>
+          </div>
         </div>
-        <section className="lg:flex flex-row-reverse lg:justify-center lg:my-10">
-          <div className="mx-5 my-10 lg:flex lg:w-2/5">
-            <img src="http://lorempixel.com/768/684" alt="" />
+      </section>
+      <section className="lg:flex lg:justify-center lg:my-10 lg:ml-20">
+        <div className="mx-6 my-10 lg:w-2/5">
+          <img src="http://lorempixel.com/768/684" alt="" />
+        </div>
+        <div className="lg:flex lg:flex-col lg:justify-center lg:px-20 lg:w-2/5">
+          <div className="border mx-6 mb-5 lg:mr-28" />
+          <div className="text-3xl mx-6 mb-3 font-bold lg:flex lg:text-5xl">
+            <h2>The easiest way to vape, by far</h2>
           </div>
-          <div className="lg:flex lg:flex-col lg:justify-center lg:px-20 lg:w-2/5">
-            <div className="border mx-6 mb-5 lg:flex lg:mr-24" />
-            <div className="text-3xl mx-6 mb-3 font-bold lg:flex lg:text-5xl ">
-              <h2>You get top-shelf products.</h2>
-            </div>
-            <div className="mx-6 left font-medium lg:text-1xl">
-              <ol className="list-disc list-inside lg:mt-3">
-                <li>Made with premium ingredients</li>
-                <li>Made with premium ingredients</li>
-              </ol>
-            </div>
+          <div className="mx-6 left font-medium mb-10 lg:text-1xl">
+            <ol className="list-disc list-inside lg:mt-3">
+              <li>Perfect for transitioning smokers or vapers on the go</li>
+              <li>Made out of metal with a premium look and feel</li>
+              <li>1800+ puffs of the most fruity and authentic tastes</li>
+            </ol>
           </div>
-        </section>
-        <section className="lg:flex lg:justify-center lg:my-10 lg:ml-20">
-          <div className="mx-6 my-10 lg:w-2/5">
-            <img src="http://lorempixel.com/768/684" alt="" />
-          </div>
-          <div className="lg:flex lg:flex-col lg:justify-center lg:px-20 lg:w-2/5">
-            <div className="border mx-6 mb-5 lg:mr-28" />
-            <div className="text-3xl mx-6 mb-3 font-bold lg:flex lg:text-5xl">
-              <h2>You're always in control.</h2>
-            </div>
-            <div className="mx-6 left font-medium mb-10 lg:text-1xl">
-              <ol className="list-disc list-inside lg:mt-3">
-                <li>Made with premium ingredients</li>
-                <li>Made with premium ingredients</li>
-                <li>Made with premium ingredients</li>
-                <li>Made with premium ingredients</li>
-                <li>Made with premium ingredients</li>
-              </ol>
-            </div>
-          </div>
-        </section>
-        <section className="lg:my-14">
-          <div className="text-2xl mb-1 font-medium flex items-center justify-center text-center lg:text-4xl">
-            <h3>Tell us how you get ready.</h3>
-          </div>
-          <div className="p-6 lg:flex lg:justify-center">
-            <Link href="/flavours">
-              <button className="bg-secondary text-white py-5 px-12 rounded-none font-bold text-xl w-full lg:w-56">
-                Shop now
-              </button>
-            </Link>
-          </div>
-        </section>
+        </div>
+      </section>
+      <section className="lg:my-14">
+        <div className="text-2xl mb-1 font-medium flex items-center justify-center text-center lg:text-4xl">
+          <h3>Pick your perfect flavour now</h3>
+        </div>
+        <div className="p-6 lg:flex lg:justify-center">
+          <Link href="/flavours">
+            <button className="bg-secondary text-white py-5 px-12 rounded-none font-bold text-xl w-full lg:w-auto">
+              Browse Flavours
+            </button>
+          </Link>
+        </div>
       </section>
     </>
   )

@@ -40,7 +40,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
             </Link>
           </div>
           <div className="flex items-center text-primary text-sm">
-            <span className="text-accent-0">
+            <span className="text-accent-0 mt-4 lg:mt-0">
               WARNING: These products are not intended for sale or use to those
               under 18 years of age. Some of the products for sale contain
               nicotine. Nicotine is an addictive chemical.
