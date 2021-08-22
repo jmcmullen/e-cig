@@ -9,6 +9,7 @@ import { WishlistButton } from '@components/wishlist'
 import { ProductSlider, ProductCard } from '@components/product'
 import { Container, Text } from '@components/ui'
 import ProductSidebar from '../ProductSidebar'
+import { getConfig } from '@lib/reviews'
 interface ProductViewProps {
   product: Product
   relatedProducts: Product[]
@@ -20,6 +21,13 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
     baseAmount: product.price.retailPrice,
     currencyCode: product.price.currencyCode!,
   })
+
+  if (typeof window !== 'undefined') {
+    const script = document.createElement('script')
+    script.innerHTML = getConfig()
+    script.async = true
+    document.head.appendChild(script)
+  }
 
   return (
     <>
@@ -54,8 +62,15 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 
           <ProductSidebar product={product} className={s.sidebar} />
         </div>
+
         <hr className="mt-7 border-accent-2" />
-        {/* <section className="py-12 px-6 mb-10">
+        <div className="px-6 py-12">
+          <Text variant="sectionHeading">Reviews</Text>
+          <div id="ReviewsWidget"></div>
+        </div>
+
+        <hr className="mt-7 border-accent-2" />
+        <section className="py-12 px-6 mb-10">
           <Text variant="sectionHeading">Related Products</Text>
           <div className={s.relatedProductsGrid}>
             {relatedProducts.map((p) => (
@@ -77,7 +92,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
               </div>
             ))}
           </div>
-        </section> */}
+        </section>
       </Container>
       <NextSeo
         title={product.name}

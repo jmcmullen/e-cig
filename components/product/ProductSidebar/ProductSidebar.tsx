@@ -100,14 +100,15 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             />
           </Collapse>
         </div>
-        <Collapse title="Care">
-          This is a limited edition production run. Printing starts when the
-          drop ends.
+        <Collapse title="Delivery">
+          Each order is sent via Australia Post using Express Delivery. A
+          tracking number is provided to your email as soon as the order has
+          been posted. Estimated delivery time is 1-3 business days.
         </Collapse>
-        <Collapse title="Details">
-          This is a limited edition production run. Printing starts when the
-          drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due
-          to COVID-19.
+        <Collapse title="Return Policy">
+          We do not accept returns. For any faulty products we have a 100% money
+          back guarantee. All you need to do is email us with your order number
+          and photos of the faulty device and we will process your refund.
         </Collapse>
       </div>
     </div>

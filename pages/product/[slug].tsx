@@ -3,6 +3,7 @@ import type {
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from 'next'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
@@ -74,7 +75,12 @@ export default function Slug({
   return router.isFallback ? (
     <h1>Loading...</h1>
   ) : (
-    <ProductView product={product} relatedProducts={relatedProducts} />
+    <>
+      <Head>
+        <script src="https://widget.reviews.io/polaris/build.js"></script>
+      </Head>
+      <ProductView product={product} relatedProducts={relatedProducts} />
+    </>
   )
 }
 
