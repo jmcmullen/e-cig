@@ -42,11 +42,10 @@ export default function Home({
     <>
       <section className="flex flex-col-reverse bg-secondary p-6">
         <div className="text-white">
-        <h2 className="text-3xl font-bold uppercase mt-5 mb-3">What's your favourite flavour?</h2>
-        <p className="mb-5">Tell us about your taste preferences and we'll find the perfect product for you.</p>
+          <h2 className="text-3xl font-bold uppercase mt-5 mb-3">What's your favourite flavour?</h2>
+          <p className="mb-5">Tell us about your taste preferences and we'll find the perfect product for you.</p>
 
-        <button className="bg-red py-5 px-12 rounded-none">Get Started</button>
-
+          <button className="bg-red py-5 px-12 rounded-none">Get Started</button>
         </div>
 
         <div className="right">

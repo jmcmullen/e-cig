@@ -33,15 +33,14 @@ const Footer: FC<Props> = ({ className, pages }) => {
           <div className="w-full">
             <Link href="/">
               <a className="flex flex-initial items-center font-bold md:mr-24">
-                <span className="rounded-full border border-accent-6 mr-2">
+                <span className="mr-2">
                   <Logo />
                 </span>
-                <span>E-CIG.DELIVERY</span>
               </a>
             </Link>
           </div>
           <div className="flex items-center text-primary text-sm">
-            <span className="text-primary">
+            <span className="text-accent-0">
               WARNING: These products are not intended for sale or use to those
               under 18 years of age. Some of the products for sale contain
               nicotine. Nicotine is an addictive chemical.
