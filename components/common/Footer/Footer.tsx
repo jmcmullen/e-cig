@@ -29,7 +29,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
   return (
     <footer className={rootClassName}>
       <Container>
-        <div className="pt-6 pb-10 flex flex-col md:flex-row justify-between items-center space-y-4 text-accent-6 text-sm">
+        <div className="py-6 flex flex-col md:flex-row justify-between items-center text-accent-6 text-sm">
           <div className="w-full">
             <Link href="/">
               <a className="flex flex-initial items-center font-bold md:mr-24">

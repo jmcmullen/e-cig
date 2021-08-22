@@ -1,5 +1,4 @@
 import cn from 'classnames'
-import Link from 'next/link'
 import { FC } from 'react'
 import s from './CartSidebarView.module.css'
 import CartItem from '../CartItem'
@@ -28,6 +27,11 @@ const CartSidebarView: FC = () => {
       currencyCode: data.currency.code,
     }
   )
+
+  const freePostage = data && data.totalPrice > 50
+  const basePrice = parseFloat(`${data?.totalPrice ?? 0}`)
+  const totalPrice = freePostage ? total : `A$${(basePrice + 14).toFixed(2)}`
+
   const handleClose = () => closeSidebar()
   const goToCheckout = () => setSidebarView('CHECKOUT_VIEW')
   const goToFlavours = () => {
@@ -50,9 +54,17 @@ const CartSidebarView: FC = () => {
           <span className="border border-dashed border-primary rounded-full flex items-center justify-center w-16 h-16 p-12 bg-secondary text-secondary">
             <Bag className="absolute" />
           </span>
-          <h2 className="pt-6 text-2xl font-bold tracking-wide text-center">
+          <h2 className="py-6 text-2xl font-bold tracking-wide text-center">
             Your cart is empty
           </h2>
+          <Button
+            href="/flavours"
+            Component="a"
+            width="100%"
+            onClick={goToFlavours}
+          >
+            Browse Flavours
+          </Button>
           {/* <p className="text-accent-3 px-10 text-center pt-2">
             Biscuit oat cake wafer icing ice cream tiramisu pudding cupcake.
           </p> */}
@@ -79,11 +91,9 @@ const CartSidebarView: FC = () => {
       ) : (
         <>
           <div className="px-4 sm:px-6 flex-1">
-            <Link href="/cart">
-              <Text variant="sectionHeading" onClick={handleClose}>
-                My Cart
-              </Text>
-            </Link>
+            <Text variant="sectionHeading" onClick={handleClose}>
+              My Cart
+            </Text>
             <ul className={s.lineItemsList}>
               {data!.lineItems.map((item: any) => (
                 <CartItem
@@ -114,12 +124,14 @@ const CartSidebarView: FC = () => {
               </li>
               <li className="flex justify-between py-1">
                 <span>Shipping</span>
-                <span className="font-bold tracking-wide">FREE</span>
+                <span className="tracking-wide">
+                  {freePostage ? <strong>FREE EXPRESS</strong> : 'A$14.00'}
+                </span>
               </li>
             </ul>
             <div className="flex justify-between border-t border-accent-2 py-3 font-bold mb-2">
               <span>Total</span>
-              <span>{total}</span>
+              <span>{totalPrice}</span>
             </div>
             <div>
               {process.env.COMMERCE_CUSTOMCHECKOUT_ENABLED ? (

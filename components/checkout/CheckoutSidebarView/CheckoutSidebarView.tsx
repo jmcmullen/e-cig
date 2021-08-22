@@ -28,6 +28,8 @@ const CheckoutSidebarView: FC = () => {
     }
   )
 
+  const postage = data && data.totalPrice > 50 ? 'FREE EXPRESS' : 'A$14.00'
+
   return (
     <SidebarLayout
       className={s.root}
@@ -60,12 +62,8 @@ const CheckoutSidebarView: FC = () => {
             <span>{subTotal}</span>
           </li>
           <li className="flex justify-between py-1">
-            <span>Taxes</span>
-            <span>Calculated at checkout</span>
-          </li>
-          <li className="flex justify-between py-1">
             <span>Shipping</span>
-            <span className="font-bold tracking-wide">FREE</span>
+            <span className="font-bold tracking-wide">{postage}</span>
           </li>
         </ul>
         <div className="flex justify-between border-t border-accent-2 py-3 font-bold mb-2">
