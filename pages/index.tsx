@@ -7,6 +7,7 @@ import { Grid, Marquee, Hero } from '@components/ui'
 
 import BlueRazz from '@assets/images/bluerazz.jpg'
 import Grape from '@assets/images/grape.jpg'
+import HeroImg from '@assets/images/hero-image.png'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
@@ -45,7 +46,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <section className="flex flex-col-reverse lg:flex-row lg:justify-center bg-secondary p-6 lg:pb-20">
+      <section className="flex flex-col-reverse lg:flex-row lg:justify-center bg-secondary p-6 lg:pb-20 lg:items-center">
         <div className="text-white lg:flex flex-col lg:w-2/5 lg:justify-center lg:items-center lg:py-20">
           <div className="lg:max-w-sm lg:flex lg:flex-col">
             <h2 className="text-3xl font-bold uppercase mt-5 mb-3 lg:text-7xl">
@@ -62,8 +63,8 @@ export default function Home({
             </Link>
           </div>
         </div>
-        <div className="right lg:w-2/5">
-          <img src="./assets/images/multipleIget.jpg" alt="" />
+        <div className="right lg:w-2/5 lg:mt-5">
+          <Image src={HeroImg} alt="" />
         </div>
       </section>
       <section>
