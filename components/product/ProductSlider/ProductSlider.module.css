@@ -1,5 +1,5 @@
 .root {
-  @apply relative w-full h-full select-none;
+  @apply relative w-full h-full select-none mt-6;
   overflow: hidden;
 }
 
