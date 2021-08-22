@@ -61,23 +61,6 @@ const ProductCard: FC<Props> = ({
 
         {variant === 'simple' && (
           <>
-            {process.env.COMMERCE_WISHLIST_ENABLED && (
-              <WishlistButton
-                className={s.wishlistButton}
-                productId={product.id}
-                variant={product.variants[0]}
-              />
-            )}
-            {!noNameTag && (
-              <div className={s.header}>
-                <h3 className={s.name}>
-                  <span>{product.name}</span>
-                </h3>
-                <div className={s.price}>
-                  {`${price} ${product.price?.currencyCode}`}
-                </div>
-              </div>
-            )}
             <div className={s.imageContainer}>
               {product?.images && (
                 <Image
@@ -92,6 +75,22 @@ const ProductCard: FC<Props> = ({
                 />
               )}
             </div>
+            {process.env.COMMERCE_WISHLIST_ENABLED && (
+              <WishlistButton
+                className={s.wishlistButton}
+                productId={product.id}
+                variant={product.variants[0]}
+              />
+            )}
+            {!noNameTag && (
+              <div className={s.header}>
+                <h3 className={s.name}>
+                  <span>{product.name}</span>
+                </h3>
+                <small>{product.sku || 'IGET XXL'}</small>
+                <button className={s.price}>Buy ${product.price.value}</button>
+              </div>
+            )}
           </>
         )}
 
