@@ -51,7 +51,7 @@ export default function Home({
           </p>
 
           <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl">
-            Get started
+            Shop now
           </button>
         </div>
 
@@ -108,7 +108,7 @@ export default function Home({
         </div>
         <div className="p-6">
           <button className="bg-secondary text-white py-5 px-12 rounded-none font-bold text-xl w-full">
-            Get started
+            Shop now
           </button>
         </div>
       </section>
