@@ -13,6 +13,8 @@ export async function getServerSideProps({
   params,
 }: GetServerSidePropsContext<{ id: string; hash: string }>) {
   try {
+    console.log(JSON.stringify({ id: params!.id, hash: params!.hash }))
+
     const res = await fetch(`${process.env.NEXT_BASE_URL}/api/verify`, {
       method: 'POST',
       body: JSON.stringify({ id: params!.id, hash: params!.hash }),
@@ -26,7 +28,7 @@ export async function getServerSideProps({
   } catch (error) {
     return {
       props: {
-        error: error.message,
+        error,
       },
     }
   }
@@ -46,7 +48,7 @@ export default function Verify({
   if (error)
     return (
       <Container>
-        <p>{error}</p>
+        <code>{JSON.stringify(error)}</code>
       </Container>
     )
 

@@ -2,6 +2,8 @@ import md5 from 'md5'
 import fetch from 'framework/local/api/utils/fetch'
 
 export default async (req: any, res: any) => {
+  console.log(req)
+
   const { id, hash } = JSON.parse(req.body)
 
   try {
