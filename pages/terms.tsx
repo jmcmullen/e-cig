@@ -498,7 +498,7 @@ export default function Home() {
               <p className="mb-10">
                 All feedback, comments, requests for technical support and other
                 communications relating to the Website should be directed to:
-                email
+                support@e-cig.delivery
               </p>
             </ol>
           </ol>
