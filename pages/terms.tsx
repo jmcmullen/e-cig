@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <section className="mx-10 lg:mx-72 text-sm">
         <div>
-          <h2 className="text-center text-3xl mb-3">Terms and Conditions</h2>
+          <h2 className="text-center text-3xl mb-5">Terms and Conditions</h2>
           <p className="mb-1">Terms of Use</p>
           <ol>
             <ol className="list-decimal list-inside">

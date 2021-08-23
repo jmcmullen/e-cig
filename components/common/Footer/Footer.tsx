@@ -33,19 +33,26 @@ const Footer: FC<Props> = ({ className, pages }) => {
           <div className="lg:flex w-full">
             <Link href="/">
               <a className="flex flex-initial items-center font-bold md:mr-24">
-                <span className="mr-2">
+                <span className="mr-2 mb-2">
                   <Logo />
                 </span>
               </a>
             </Link>
-            <div className="lg:flex lg:mt-5 mt-2">
-              <Link href="/terms">
-                <a className="text-red">Terms and Conditions</a>
-              </Link>
+            <div className="flex flex-col lg:mt-3">
+              <div className="lg:flex">
+                <Link href="/terms">
+                  <a className="text-red">Terms and Conditions</a>
+                </Link>
+              </div>
+              <div className="lg:flex mt-2">
+                <Link href="/privacy">
+                  <a className="text-red">Privacy</a>
+                </Link>
+              </div>
             </div>
           </div>
           <div className="flex items-center text-primary text-sm">
-            <span className="text-accent-0 mt-4 lg:mt-0">
+            <span className="text-accent-0 mt-2 lg:mt-0">
               WARNING: These products are not intended for sale or use to those
               under 18 years of age. Some of the products for sale contain
               nicotine. Nicotine is an addictive chemical.
