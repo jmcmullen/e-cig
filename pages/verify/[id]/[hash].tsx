@@ -22,6 +22,7 @@ export async function getServerSideProps({
     const data = await res.json()
     return {
       props: {
+        verified: data?.verified,
         fields: data?.fields,
       },
     }
@@ -36,6 +37,7 @@ export async function getServerSideProps({
 
 export default function Verify({
   fields,
+  verified,
   error,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   if (typeof window !== 'undefined' && fields) {
@@ -56,6 +58,19 @@ export default function Verify({
     return (
       <Container>
         <p>Invalid user id provided</p>
+      </Container>
+    )
+  }
+
+  if (!verified) {
+    return (
+      <Container>
+        <div className="mx-6 my-24 flex flex-col items-center justify-center">
+          <h2 className="text-4xl text-center mb-6">Age Verification</h2>
+          <p className="text-my-6">
+            Hi {fields.firstName}, you are already verified!
+          </p>
+        </div>
       </Container>
     )
   }

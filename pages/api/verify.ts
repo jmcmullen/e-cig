@@ -15,6 +15,7 @@ export default async (req: any, res: any) => {
       },
     })
     const data = await shopify.json()
+    console.log(data)
 
     if (
       md5(data.customer.phone) === hash ||
@@ -22,6 +23,7 @@ export default async (req: any, res: any) => {
     ) {
       res.json({
         success: true,
+        verified: data.customer.tags.includes('verified'),
         fields: {
           firstName: data.customer.first_name,
           lastName: data.customer.last_name,
@@ -38,6 +40,7 @@ export default async (req: any, res: any) => {
       res.json({ success: false })
     }
   } catch (error) {
+    console.log(error)
     res.json({ success: false })
   }
 }
