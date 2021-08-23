@@ -1,12 +1,15 @@
 import { Layout } from '@components/common'
+import { Container } from '@components/ui'
 
 export default function Home() {
   return (
-    <>
-      <section className="mx-10 lg:mx-72 text-sm">
-        <h2 className="text-2xl text-center mb-5 mt-3">Privacy Statement</h2>
+    <Container>
+      <div className="mx-6 my-24">
+        <h2 className="text-4xl text-center mb-20">Privacy Statement</h2>
         <ol className="list-decimal">
-          <li className="text-2xl mb-3">What do we do with your information</li>
+          <li className="text-2xl mb-3 mt-10">
+            What do we do with your information
+          </li>
           <p className="mb-3">
             When you purchase something from our store, as part of the buying
             and selling process, we collect the personal information you give us
@@ -19,7 +22,7 @@ export default function Home() {
             Email marketing (if applicable): With your permission, we may send
             you emails about our store, new products and other updates.
           </p>
-          <li className="text-2xl mb-3">Consent</li>
+          <li className="text-2xl mb-3 mt-10">Consent</li>
           <p className="mb-3">How do you get my consent?</p>
           <p className="mb-3">
             When you provide us with personal information to complete a
@@ -39,12 +42,12 @@ export default function Home() {
             disclosure of your information, at anytime, by contacting us at
             support@e-cig.delivery
           </p>
-          <li className="text-2xl mb-2">Disclosure</li>
+          <li className="text-2xl mb-3 mt-10">Disclosure</li>
           <p className="mb-3">
             We may disclose your personal information if we are required by law
             to do so or if you violate our Terms of Service.
           </p>
-          <li className="text-2xl mb-3">Shopify</li>
+          <li className="text-2xl mb-3 mt-10">Shopify</li>
           <p className="mb-3">
             Our store is hosted on Shopify Inc. They provide us with the online
             e-commerce platform that allows us to sell our products and services
@@ -55,7 +58,7 @@ export default function Home() {
             the general Shopify application. They store your data on a secure
             server behind a firewall.
           </p>
-          <p className="mb-3">Payment:</p>
+          <li className="text-2xl mb-3 mt-10">Payment</li>
           <p className="mb-3">
             If you choose a direct payment gateway to complete your purchase,
             then Shopify stores your credit card data. It is encrypted through
@@ -74,7 +77,7 @@ export default function Home() {
             Service (https://www.shopify.com/legal/terms) or Privacy Statement
             (https://www.shopify.com/legal/privacy).
           </p>
-          <li className="text-2xl mb-3">Third-party Services</li>
+          <li className="text-2xl mb-3 mt-10">Third-party Services</li>
           <p className="mb-3">
             In general, the third-party providers used by us will only collect,
             use and disclose your information to the extent necessary to allow
@@ -89,21 +92,20 @@ export default function Home() {
             or application, you are no longer governed by this Privacy Policy or
             our website’s Terms of Service.
           </p>
-          <p className="mb-3">Links</p>
+          <p className="mb-3 mt-10">Links</p>
           <p className="mb-3">
             When you click on links on our store, they may direct you away from
             our site. We are not responsible for the privacy practices of other
             sites and encourage you to read their privacy statements.
           </p>
-          <li className="text-2xl mb-3">Age of Consent</li>
+          <li className="text-2xl mb-3 mt-10">Age of Consent</li>
           <p className="mb-3">
-            By using this site, you represent that you are at least the age of
-            majority in your state or province of residence, or that you are the
-            age of majority in your state or province of residence and you have
-            given us your consent to allow any of your minor dependents to use
-            this site.
+            By using this site, you represent that you are 18 or over. Minors
+            are not allowed to use this website.
           </p>
-          <li className="text-2xl mb-3">Changes to this Privacy Policy</li>
+          <li className="text-2xl mb-3 mt-10">
+            Changes to this Privacy Policy
+          </li>
           <p className="mb-3">
             We reserve the right to modify this privacy policy at any time, so
             please review it frequently. Changes and clarifications will take
@@ -115,16 +117,17 @@ export default function Home() {
             company, your information may be transferred to the new owners so
             that we may continue to sell products to you.
           </p>
-          <li className="text-2xl mb-3">Questions and contact information</li>
+          <li className="text-2xl mb-3 mt-10">
+            Questions and contact information
+          </li>
           <p className="mb-10">
             If you would like to: access, correct, amend or delete any personal
             information we have about you, register a complaint, or simply want
-            more information contact our Privacy Compliance Officer at
-            support@e-cig.delivery
+            more information contact us at support@e-cig.delivery
           </p>
         </ol>
-      </section>
-    </>
+      </div>
+    </Container>
   )
 }
 
