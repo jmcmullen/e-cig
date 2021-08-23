@@ -10,6 +10,7 @@ export default function Complete() {
           Thank you so much. You can expect your order to arrive in 1-3 business
           days. We will email you a tracking code shortly.
         </p>
+
         <p className="my-6">
           You only need to verify your first order, your next purchase will skip
           this step.
