@@ -109,15 +109,15 @@ const Layout: FC<Props> = ({
         <Footer pages={pageProps.pages} />
         <ModalUI />
         <SidebarUI />
-        {/* <FeatureBar
-          title="This site uses cookies to improve your experience. By clicking, you agree to our Privacy Policy."
+        <FeatureBar
+          title="You must be 18 or older to visit this website. Your age will be verified at checkout."
           hide={acceptedCookies}
           action={
             <Button className="mx-5" onClick={() => onAcceptCookies()}>
-              Accept cookies
+              I am 18 or older
             </Button>
           }
-        /> */}
+        />
       </div>
     </CommerceProvider>
   )
