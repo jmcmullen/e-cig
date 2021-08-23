@@ -29,8 +29,8 @@ const Footer: FC<Props> = ({ className, pages }) => {
   return (
     <footer className={rootClassName}>
       <Container>
-        <div className="py-6 flex flex-col md:flex-row justify-between items-center text-accent-6 text-sm">
-          <div className="w-full">
+        <div className="py-6 flex md:flex-row lg:flex-row justify-between items-center text-accent-6 text-sm">
+          <div className="lg:flex w-full">
             <Link href="/">
               <a className="flex flex-initial items-center font-bold md:mr-24">
                 <span className="mr-2">
@@ -38,6 +38,11 @@ const Footer: FC<Props> = ({ className, pages }) => {
                 </span>
               </a>
             </Link>
+            <div className="lg:flex lg:mt-5 mt-2 text-sm">
+              <Link href="/terms">
+                <a className="text-red">Terms and Conditions</a>
+              </Link>
+            </div>
           </div>
           <div className="flex items-center text-primary text-sm">
             <span className="text-accent-0 mt-4 lg:mt-0">
