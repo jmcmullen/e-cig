@@ -75,12 +75,7 @@ export default function Slug({
   return router.isFallback ? (
     <h1>Loading...</h1>
   ) : (
-    <>
-      <Head>
-        <script src="https://widget.reviews.io/polaris/build.js"></script>
-      </Head>
-      <ProductView product={product} relatedProducts={relatedProducts} />
-    </>
+    <ProductView product={product} relatedProducts={relatedProducts} />
   )
 }
 
