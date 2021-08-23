@@ -12,27 +12,50 @@ import type {
 export async function getServerSideProps({
   params,
 }: GetServerSidePropsContext<{ id: string; hash: string }>) {
-  const res = await fetch(`${process.env.NEXT_BASE_URL}/api/verify`, {
-    method: 'POST',
-    body: JSON.stringify({ id: params!.id, hash: params!.hash }),
-  })
-  const data = await res.json()
-
-  return {
-    props: {
-      fields: data.fields,
-    },
+  try {
+    const res = await fetch(`${process.env.NEXT_BASE_URL}/api/verify`, {
+      method: 'POST',
+      body: JSON.stringify({ id: params!.id, hash: params!.hash }),
+    })
+    const data = await res.json()
+    return {
+      props: {
+        fields: data?.fields,
+      },
+    }
+  } catch (error) {
+    return {
+      props: {
+        error: error.message,
+      },
+    }
   }
 }
 
 export default function Verify({
   fields,
+  error,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   if (typeof window !== 'undefined' && fields) {
     const script = document.createElement('script')
     script.innerHTML = getConfig(fields)
     script.async = true
     document.body.appendChild(script)
+  }
+
+  if (error)
+    return (
+      <Container>
+        <p>{error}</p>
+      </Container>
+    )
+
+  if (!fields) {
+    return (
+      <Container>
+        <p>Invalid user id provided</p>
+      </Container>
+    )
   }
 
   return (
