@@ -38,7 +38,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
                 </span>
               </a>
             </Link>
-            <div className="lg:flex lg:mt-5 mt-2 text-sm">
+            <div className="lg:flex lg:mt-5 mt-2">
               <Link href="/terms">
                 <a className="text-red">Terms and Conditions</a>
               </Link>
