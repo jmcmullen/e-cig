@@ -54,15 +54,7 @@ export default function Verify({
       </Container>
     )
 
-  if (!fields) {
-    return (
-      <Container>
-        <p>Invalid user id provided</p>
-      </Container>
-    )
-  }
-
-  if (!verified) {
+  if (verified) {
     return (
       <Container>
         <div className="mx-6 my-24 flex flex-col items-center justify-center">

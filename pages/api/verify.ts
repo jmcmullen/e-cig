@@ -2,8 +2,6 @@ import md5 from 'md5'
 import fetch from 'framework/local/api/utils/fetch'
 
 export default async (req: any, res: any) => {
-  console.log(req)
-
   const { id, hash } = JSON.parse(req.body)
 
   try {
@@ -15,9 +13,7 @@ export default async (req: any, res: any) => {
         ['Content-Type']: 'application/json',
       },
     })
-    console.log(shopify)
     const data = await shopify.json()
-    console.log(data)
 
     const customerHash = data.customer.phone
       ? md5(data.customer.phone)
