@@ -19,10 +19,11 @@ export default async (req: any, res: any) => {
     const data = await shopify.json()
     console.log(data)
 
-    if (
-      md5(data.customer.phone) === hash ||
-      md5(data.customer.email) === hash
-    ) {
+    const customerHash = data.customer.phone
+      ? md5(data.customer.phone)
+      : md5(data.customer.email)
+
+    if (customerHash === hash) {
       res.json({
         success: true,
         verified: data.customer.tags.includes('verified'),
