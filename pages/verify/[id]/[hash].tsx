@@ -15,7 +15,7 @@ export async function getServerSideProps({
   try {
     console.log(JSON.stringify({ id: params!.id, hash: params!.hash }))
 
-    const res = await fetch(`${process.env.NEXT_BASE_URL}/api/verify`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/verify`, {
       method: 'POST',
       body: JSON.stringify({ id: params!.id, hash: params!.hash }),
     })

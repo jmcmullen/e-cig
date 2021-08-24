@@ -12,8 +12,10 @@ export default async (req: any, res: any) => {
       method: 'POST',
       headers: {
         ['X-Shopify-Access-Token']: process.env.SHOPIFY_ADMIN_TOKEN!,
+        ['Content-Type']: 'application/json',
       },
     })
+    console.log(shopify)
     const data = await shopify.json()
     console.log(data)
 
