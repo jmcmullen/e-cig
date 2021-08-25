@@ -24,6 +24,6 @@
 }
 
 .root .price {
-  @apply pt-2 pb-4 text-sm bg-primary text-accent-9
+  @apply pt-2 pb-4 text-2xl bg-primary text-accent-9
   font-semibold inline-block tracking-wide;
 }

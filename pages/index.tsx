@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
+import { Button } from '@components/ui'
 import { ProductCard } from '@components/product'
 import { Grid, Marquee, Hero } from '@components/ui'
 
@@ -49,22 +50,22 @@ export default function Home({
       <section className="flex flex-col-reverse lg:flex-row lg:justify-center bg-secondary p-6 lg:pb-20 lg:items-center">
         <div className="text-white lg:flex flex-col lg:w-2/5 lg:justify-center lg:items-center lg:py-20">
           <div className="lg:max-w-sm lg:flex lg:flex-col">
-            <h2 className="text-3xl font-bold uppercase mt-5 mb-3 lg:text-7xl">
-              Delicious Vapes, Delivered.
+            <h2 className="text-4xl font-bold uppercase mt-5 mb-3 lg:text-6xl">
+              Disposable iGet Vapes, Delivered.
             </h2>
-            <p className="mb-5 lg:text-2xl">
-              We have your favourite flavours of disposable vapes. All our vapor
-              cigarettes are ready-to-use – no charging needed.
+            <p className="mb-5 text-lg lg:text-2xl">
+              Based in Sydney, Australia, we have your favourite fruity flavours
+              of disposable vapes ready to be delivered to your door.
             </p>
             <Link href="/flavours">
-              <button className="bg-red py-5 px-12 rounded-none w-full font-bold text-xl">
-                Browse Flavours
-              </button>
+              <Button style={{ background: 'var(--red)', width: '100%' }}>
+                Discover Flavours
+              </Button>
             </Link>
           </div>
         </div>
         <div className="right lg:w-2/5 lg:mt-5">
-          <Image src={HeroImg} alt="" />
+          <Image src={HeroImg} alt="" layout="responsive" />
         </div>
       </section>
       <section>

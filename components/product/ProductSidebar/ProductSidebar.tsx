@@ -43,7 +43,11 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
 
   return (
     <div className={className}>
-      <ProductTag name={product.name} fontSize={32} />
+      <ProductTag
+        name={product.name}
+        fontSize={32}
+        price={product.price.value}
+      />
       <div className="block lg:hidden">
         {process.env.COMMERCE_CART_ENABLED && (
           <Button
@@ -56,7 +60,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           >
             {variant?.availableForSale === false
               ? 'Not Available'
-              : `Add To Cart ($${product.price.value})`}
+              : `Add To Cart`}
           </Button>
         )}
       </div>
@@ -87,7 +91,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           >
             {variant?.availableForSale === false
               ? 'Not Available'
-              : `Add To Cart ($${product.price.value})`}
+              : `Add To Cart`}
           </Button>
         )}
       </div>
