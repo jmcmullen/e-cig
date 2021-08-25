@@ -46,7 +46,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
       <ProductTag
         name={product.name}
         fontSize={32}
-        price={product.price.value}
+        price={`$${product.price.value} ${product.price?.currencyCode}`}
       />
       <div className="block lg:hidden">
         {process.env.COMMERCE_CART_ENABLED && (
