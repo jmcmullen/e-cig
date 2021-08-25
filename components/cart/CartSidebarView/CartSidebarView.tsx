@@ -102,17 +102,6 @@ const CartSidebarView: FC = () => {
                   currencyCode={data!.currency.code}
                 />
               ))}
-              <li>
-                <Button
-                  href="/flavours"
-                  Component="b"
-                  width="100%"
-                  variant="ghost"
-                  onClick={goToFlavours}
-                >
-                  Buy More Flavours
-                </Button>
-              </li>
             </ul>
           </div>
 
@@ -143,6 +132,17 @@ const CartSidebarView: FC = () => {
                   Proceed to Checkout
                 </Button>
               )}
+
+              <Button
+                href="/flavours"
+                Component="b"
+                width="100%"
+                variant="ghost"
+                onClick={goToFlavours}
+                className="mt-4"
+              >
+                Buy More Flavours
+              </Button>
             </div>
           </div>
         </>
