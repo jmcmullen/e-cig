@@ -20,8 +20,7 @@ export default async (req: any, res: any) => {
       : md5(data.customer.email)
 
     if (customerHash === hash) {
-      res.json({
-        success: true,
+      const result = {
         verified: data.customer.tags.includes('verified'),
         fields: {
           firstName: data.customer.first_name,
@@ -34,12 +33,16 @@ export default async (req: any, res: any) => {
           state: data.customer.default_address.province,
           city: data.customer.default_address.city,
         },
+      }
+
+      res.json({
+        success: true,
+        ...result,
       })
     } else {
-      res.json({ success: false })
+      res.json({ success: false, error: `Customer has does not match.` })
     }
   } catch (error) {
-    console.log(error)
-    res.json({ success: false })
+    res.json({ success: false, error: error.message })
   }
 }

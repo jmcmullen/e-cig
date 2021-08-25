@@ -13,8 +13,6 @@ export async function getServerSideProps({
   params,
 }: GetServerSidePropsContext<{ id: string; hash: string }>) {
   try {
-    console.log(JSON.stringify({ id: params!.id, hash: params!.hash }))
-
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/verify`, {
       method: 'POST',
       body: JSON.stringify({ id: params!.id, hash: params!.hash }),
@@ -22,14 +20,14 @@ export async function getServerSideProps({
     const data = await res.json()
     return {
       props: {
-        verified: data?.verified,
-        fields: data?.fields,
+        verified: data?.verified ?? false,
+        fields: data?.fields ?? null,
       },
     }
   } catch (error) {
     return {
       props: {
-        error,
+        error: error.message,
       },
     }
   }
@@ -47,10 +45,17 @@ export default function Verify({
     document.body.appendChild(script)
   }
 
-  if (error)
+  if (error || !fields)
     return (
       <Container>
-        <code>{JSON.stringify(error)}</code>
+        <div className="mx-6 my-24 flex flex-col items-center justify-center">
+          <h2 className="text-4xl text-center mb-6">Oops!</h2>
+          <p className="text-my-6">
+            An error has occured... Please contact us at{' '}
+            <a href="mailto:support@e-cig.delivery">support@e-cig.delivery</a>
+          </p>
+          <code>{JSON.stringify(error)}</code>
+        </div>
       </Container>
     )
 
