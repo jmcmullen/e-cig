@@ -5,7 +5,7 @@ import s from './ProductTag.module.css'
 interface ProductTagProps {
   className?: string
   name: string
-  price?: number
+  price?: string
   fontSize?: number
 }
 
@@ -28,7 +28,7 @@ const ProductTag: React.FC<ProductTagProps> = ({
           {name}
         </span>
       </h3>
-      <p className={s.price}>${price}</p>
+      <p className={s.price}>{price}</p>
     </div>
   )
 }
