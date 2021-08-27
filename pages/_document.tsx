@@ -6,6 +6,14 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body className="loading">
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-WK4CLFW"
+              height="0"
+              width="0"
+              className="hidden invisible"
+            ></iframe>
+          </noscript>
           <Main />
           <NextScript />
         </body>
