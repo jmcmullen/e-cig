@@ -2,8 +2,16 @@ import { FC } from 'react'
 import NextHead from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import config from '@config/seo.json'
+import { getConfig } from '@lib/gtm'
 
 const Head: FC = () => {
+  if (typeof window !== 'undefined') {
+    const script = document.createElement('script')
+    script.innerHTML = getConfig()
+    script.async = true
+    document.head.appendChild(script)
+  }
+
   return (
     <>
       <DefaultSeo {...config} />
