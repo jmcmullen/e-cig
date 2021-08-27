@@ -20,6 +20,7 @@ export async function getServerSideProps({
     const data = await res.json()
     return {
       props: {
+        id: params!.id,
         verified: data?.verified ?? false,
         fields: data?.fields ?? null,
       },
@@ -34,13 +35,14 @@ export async function getServerSideProps({
 }
 
 export default function Verify({
+  id,
   fields,
   verified,
   error,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  if (typeof window !== 'undefined' && fields) {
+  if (typeof window !== 'undefined' && id && fields) {
     const script = document.createElement('script')
-    script.innerHTML = getConfig(fields)
+    script.innerHTML = getConfig(id!, fields)
     script.async = true
     document.body.appendChild(script)
   }

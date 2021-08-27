@@ -50,7 +50,7 @@ export default function Home({
         <div className="text-white lg:flex flex-col lg:w-2/5 lg:justify-center lg:items-center lg:py-20">
           <div className="lg:max-w-sm lg:flex lg:flex-col">
             <h2 className="text-3xl font-bold uppercase mt-5 mb-3 lg:text-7xl">
-              Delicious Vapes, Delivered.
+              Disposable iGet Vapes, Delivered.
             </h2>
             <p className="mb-5 lg:text-2xl">
               We have your favourite flavours of disposable vapes. All our vapor

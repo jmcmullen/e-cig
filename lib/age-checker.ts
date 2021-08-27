@@ -8,7 +8,7 @@ type AgeCheckerFields = {
   city: string
 }
 
-export const getConfig = (fields: AgeCheckerFields) => {
+export const getConfig = (id: string, fields: AgeCheckerFields) => {
   return `
     (function(w,d) {
       var config = {
@@ -26,7 +26,10 @@ export const getConfig = (fields: AgeCheckerFields) => {
           city: "${fields.city}",
         },
         onclosed: () => {
-          window.location.href="/verify/complete"
+          window.location.href="/verify/complete/${id}"
+        },
+        onstatuschanged: ({status}) => {
+          console.log(status)
         }
       };
 
