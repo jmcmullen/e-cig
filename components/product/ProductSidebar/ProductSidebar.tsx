@@ -3,6 +3,7 @@ import { useAddItem } from '@framework/cart'
 import { FC, useEffect, useState } from 'react'
 import { ProductOptions } from '@components/product'
 import type { Product } from '@commerce/types/product'
+import { trackEvent } from '@lib/gtm'
 import { Button, Text, Rating, Collapse, useUI } from '@components/ui'
 import ProductTag from '../ProductTag'
 import {
@@ -36,6 +37,10 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
       })
       openSidebar()
       setLoading(false)
+      trackEvent('Product Added', {
+        product: product.name,
+        price: product.price.value,
+      })
     } catch (err) {
       setLoading(false)
     }

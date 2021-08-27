@@ -1,5 +1,6 @@
 import cn from 'classnames'
 import { FC } from 'react'
+import { useEffect } from 'react'
 import s from './CartSidebarView.module.css'
 import CartItem from '../CartItem'
 import { Button, Text } from '@components/ui'
@@ -9,6 +10,7 @@ import useCart from '@framework/cart/use-cart'
 import usePrice from '@framework/product/use-price'
 import SidebarLayout from '@components/common/SidebarLayout'
 import { useRouter } from 'next/router'
+import { trackEvent } from '@lib/gtm'
 
 const CartSidebarView: FC = () => {
   const router = useRouter()
@@ -41,6 +43,13 @@ const CartSidebarView: FC = () => {
 
   const error = null
   const success = null
+
+  useEffect(() => {
+    trackEvent('Cart Viewed', {
+      subtotal: data?.subtotalPrice,
+      total: totalPrice,
+    })
+  }, [])
 
   return (
     <SidebarLayout

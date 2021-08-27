@@ -7,6 +7,7 @@ import Image, { ImageProps } from 'next/image'
 import WishlistButton from '@components/wishlist/WishlistButton'
 import usePrice from '@framework/product/use-price'
 import ProductTag from '../ProductTag'
+import { trackEvent } from '@lib/gtm'
 interface Props {
   className?: string
   product: Product
@@ -39,7 +40,15 @@ const ProductCard: FC<Props> = ({
 
   return (
     <Link href={`/product/${product.slug}`} {...props}>
-      <a className={rootClassName}>
+      <a
+        className={rootClassName}
+        onClick={() =>
+          trackEvent('Product Clicked', {
+            product: product.name,
+            price: product.price.value,
+          })
+        }
+      >
         {variant === 'slim' && (
           <>
             <div className={s.header}>

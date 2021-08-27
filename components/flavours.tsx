@@ -1,13 +1,13 @@
 import cn from 'classnames'
 import type { SearchPropsType } from '@lib/search-props'
-import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 import { Layout } from '@components/common'
 import { ProductCard } from '@components/product'
 import type { Product } from '@commerce/types/product'
-import { Container, Grid, Skeleton } from '@components/ui'
+import { Container, Skeleton } from '@components/ui'
 
 import useSearch from '@framework/product/use-search'
 
@@ -27,6 +27,7 @@ import {
   getDesignerPath,
   useSearchMeta,
 } from '@lib/search'
+import { trackEvent } from '@lib/gtm'
 
 export default function Search({ categories, brands }: SearchPropsType) {
   const [activeFilter, setActiveFilter] = useState('')
@@ -62,6 +63,15 @@ export default function Search({ categories, brands }: SearchPropsType) {
     }
     setActiveFilter(filter)
   }
+
+  useEffect(() => {
+    trackEvent('Product List Viewed', {
+      products: data?.products.map((p) => ({
+        name: p.name,
+        price: p.price.value,
+      })),
+    })
+  }, [])
 
   return (
     <Container>

@@ -10,6 +10,8 @@ import { ProductSlider, ProductCard } from '@components/product'
 import { Container, Text } from '@components/ui'
 import ProductSidebar from '../ProductSidebar'
 import { getConfig } from '@lib/reviews'
+import { useEffect } from 'react'
+import { trackEvent } from '@lib/gtm'
 interface ProductViewProps {
   product: Product
   relatedProducts: Product[]
@@ -28,6 +30,13 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
     script.async = true
     document.head.appendChild(script)
   }
+
+  useEffect(() => {
+    trackEvent('Product Viewed', {
+      product: product.name,
+      price: product.price.value,
+    })
+  }, [])
 
   return (
     <>
