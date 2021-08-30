@@ -1,4 +1,4 @@
-const w = window as any
+const w = typeof window !== 'undefined' && (window as any)
 
 export const trackPageView = (url: string) => {
   w &&
